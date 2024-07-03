@@ -30,9 +30,10 @@ function App() {
 
   return (
     <>
-  
-      <div className='w-full max-w-md mx-auto rounded-xl px-4 py-3 my-8 text-red-600 bg-black'>
-        <h1 className='text-orange-400 text-center my-4'>Password generator</h1>
+      <div className=' flex items-center justify-center min-h-screen bg-black'>
+      <div className='w-full max-w-md mx-auto rounded-xl px-4 py-3 my-8 text-white bg-black '>
+      <h1 className='text-ph text-center my-4 text-5xl font-extrabold '>Password generator</h1>
+
         <div className="flex shadow-sm rounded-lg overflow-hidden mb-4">
           <input type="text"
           value={password}
@@ -72,7 +73,7 @@ function App() {
         </div>
       </div>
 
-
+      </div>
       </>
   )
 }
