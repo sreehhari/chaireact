@@ -13,7 +13,7 @@ function App() {
       str+="1234567890"
     }
     if(char){
-      str+="!@#$%^&*()_+=`~?/\|*"
+      str+="!@#$%^&*()_+=`~?/|*"
     }
     for (let i =1 ; i<length; i++) {
       let char = Math.floor(Math.random()*str.length+1)
