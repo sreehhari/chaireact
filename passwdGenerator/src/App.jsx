@@ -1,4 +1,4 @@
-import { useState, useCallback, useEffect } from 'react'
+import { useState, useCallback, useEffect, useRef } from 'react'
 import './App.css'
 
 function App() {
@@ -27,7 +27,13 @@ function App() {
     },[length,char,number,setPassword])
   
 
+//use ref hook
+const passclip =useRef(null);
 
+const copyToClipboard=useCallback(()=>{
+  window.navigator.clipboard.writeText(password);
+  alert("copied")
+},[password])
   return (
     <>
       <div className=' flex items-center justify-center min-h-screen bg-black'>
@@ -42,7 +48,9 @@ function App() {
           readOnly
     
           />
-        <button className='outline-none bg-ph text-black px-3'>Copy</button>
+        <button className='outline-none bg-ph text-black px-3'
+        onClick={copyToClipboard}
+        >Copy</button>
         </div>
         <div className='flex text-sm  gap-x-2'>
           <div className='flex items-center gap-x-1'>
@@ -52,6 +60,7 @@ function App() {
                   value={length}
                   className='cursor-pointer'
                   onChange={(e)=>{setLength(e.target.value)}}
+                  ref={passclip}
 
             
             />
