@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react'
 import UserContext from '../context/UserContext';
 const Login = () => {
-    const[username,setUsername]=useState('');
+    const[username,setUsername]=useState(null);
     const[password,setPassword]=useState('');
     const {setUser}=useContext(UserContext);
     const handleSubmit =(e)=>{
@@ -17,6 +17,7 @@ const Login = () => {
          value={username}
          onChange={(e)=>setUsername(e.target.value)}
          />
+         {"  "}
         
         <input type="password"
         placeholder='password'
